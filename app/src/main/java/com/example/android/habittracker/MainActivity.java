@@ -5,10 +5,8 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.MenuPopupWindow;
 import android.util.Log;
 
-import com.example.android.habittracker.data.HabitContract;
 import com.example.android.habittracker.data.HabitContract.HabitEntry;
 import com.example.android.habittracker.data.HabitDbHelper;
 
@@ -35,14 +33,11 @@ public class MainActivity extends AppCompatActivity {
         values.put(HabitEntry.COLUMN_HABIT_DURATION, 60);
 
         long newRowId = db.insert(HabitEntry.TABLE_NAME, null, values);
-        Log.v("MainActivity", "insertHabit new row id is: " + newRowId);
     }
 
     private void readHabit() {
-        Log.v("MainActivity", "entered readhabit method");
 
         SQLiteDatabase db = mDbHelper.getReadableDatabase();
-        Log.v("MainActivity", "value of readable databse returned in readHabit method: " + db);
 
         String[] projection = {
                 HabitEntry._ID,
@@ -60,7 +55,6 @@ public class MainActivity extends AppCompatActivity {
                 null,
                 null
         );
-        Log.v("MainActivity", "value of returned cursor:  " + cursor);
 
         cursor.moveToFirst();
         int idColumnIndex = cursor.getColumnIndex(HabitEntry._ID);
