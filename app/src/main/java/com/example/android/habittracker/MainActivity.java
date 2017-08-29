@@ -33,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
         values.put(HabitEntry.COLUMN_HABIT_DURATION, 60);
 
         long newRowId = db.insert(HabitEntry.TABLE_NAME, null, values);
+        Log.v("MainActivity", "value of newRowId in insertHabit method: " + newRowId);
     }
 
     private void readHabit() {
