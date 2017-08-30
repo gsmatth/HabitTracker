@@ -22,10 +22,12 @@ public class HabitDbHelper extends SQLiteOpenHelper {
     public HabitDbHelper(Context context){
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
+    @Override
     public void onCreate(SQLiteDatabase db){
         db.execSQL(SQL_CREATE_HABITS_TABLE);
     }
     //placeholder for required implemented methods for SQLiteOpenHelper subclass
+    @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion){
     }
     public Cursor readHabits() {
