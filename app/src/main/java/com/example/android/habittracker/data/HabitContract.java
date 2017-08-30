@@ -7,7 +7,7 @@ import android.provider.BaseColumns;
  */
 
 public final class HabitContract {
-
+    //empty constructor prevents the initializing of an instance of HabitContract class
     private HabitContract(){}
 
     //inner class for "habits" table
